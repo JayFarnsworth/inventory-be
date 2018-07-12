@@ -14,7 +14,7 @@ routes.get('/users', (req, res) => {
   var name = req.query.name;
   fetch(`https://inventorydb.herokuapp.com/users?name=${name}`)
     .then(resp => resp.json())
-    .then(resp => {res.send(resp)})
+    .then(resp => {res.status(200).send(resp)})
 })
 
 routes.post('/users/post', (req, res) => {
