@@ -12,7 +12,7 @@ routes.get('/hello', (req, res) => {
 routes.get('/users', (req, res) => {
   console.log('mongo working')
   var name = req.query.name;
-  fetch(`http://localhost:4000/users?name=${name}`)
+  fetch(`https://inventorydb.herokuapp.com/users?name=${name}`)
     .then(resp => resp.json())
     .then(resp => {res.send(resp)})
 })
