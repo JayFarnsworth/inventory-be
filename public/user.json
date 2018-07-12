@@ -1,0 +1,11 @@
+{
+  "name": "Jay Farnsworth",
+  "school": "Boulder High School",
+  "email": "JCFarnz@gmail.com",
+  "items": [{
+    "name": "water",
+    "description": "clear gallon jugs of water.",
+    "expiration": "04/20",
+    "quantity": "50 gallons"
+  }]
+}
