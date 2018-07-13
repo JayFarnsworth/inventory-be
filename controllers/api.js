@@ -15,11 +15,12 @@ routes.get('/users', (req, res) => {
   fetch(`https://inventorydb.herokuapp.com/users?name=${name}`)
     .then(resp => resp.json())
     .then(resp => {res.status(200).send(resp)})
+    .catch(error=>console.log(error))
 })
 
 routes.post('/users/post', (req, res) => {
   var clientServerOptions = {
-    uri: 'http://localhost:4000/users/post',
+    uri: 'https://inventorydb.herokuapp.com/users/post',
     body: JSON.stringify(req.body),
     method: 'POST',
     headers: {
