@@ -10,13 +10,13 @@ routes.get('/hello', (req, res) => {
 });
 
 routes.get('/users', (req, res) => {
-  console.log('mongo working')
-  var name = req.query.name;
-  fetch(`https://inventorydb.herokuapp.com/users?name=${name}`)
+  fetch(`https://inventorydb.herokuapp.com/allusers`)
     .then(resp => resp.json())
     .then(resp => {res.status(200).send(resp)})
     .catch(error=>console.log(error))
 })
+
+// routes.get('/facilities')
 
 routes.post('/users/post', (req, res) => {
   var clientServerOptions = {
