@@ -38,8 +38,5 @@ router.post("/upload", upload.single("file"), (request, response) => {
   response.json({ data: request.file.location });
 });
 
-router.get('/hi', (req, res) => {
-  res.send('hi')
-})
 
 module.exports = router;

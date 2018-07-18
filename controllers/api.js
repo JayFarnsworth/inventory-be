@@ -16,6 +16,29 @@ routes.get('/users', (req, res) => {
     .catch(error=>console.log(error))
 })
 
+routes.get('/inventory', (req, res) => {
+  fetch('https://inventorydb.herokuapp.com/inventory')
+    .then(resp=>resp.json())
+    .then(resp=>res.send(resp))
+})
+
+routes.post('/inventory', (req, res) => {
+  var clientServerOptions = {
+    uri: 'https://inventorydb.herokuapp.com/inventory',
+    body: JSON.stringify(req.body),
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  request(clientServerOptions, function (error, response) {
+    console.log(response.body);
+    res.send(response.body)
+    return;
+  });
+})
+
+
 // routes.get('/facilities')
 
 routes.post('/users/post', (req, res) => {
