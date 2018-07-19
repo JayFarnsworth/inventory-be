@@ -49,7 +49,7 @@ routes.put('/user', (req, res) => {
     school: schoolId
   }
   var clientServerOptions = {
-    uri: 'https://inventorydb.herokuapp.com/user',
+    uri: `https://inventorydb.herokuapp.com/user?userId=${userId}&schoolId=${schoolId}`,
     body: JSON.stringify(req.body),
     method: 'PUT',
     headers: {
