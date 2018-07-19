@@ -80,6 +80,12 @@ routes.delete('/user', (req, res) => {
   });
 })
 
+routes.get('/facilities', (req, res) => {
+  fetch('https://inventorydb.herokuapp.com/allfacilities')
+    .then(resp => resp.json())
+    .then(resp => res.send(resp))
+})
+
 
 routes.get('/inventory', (req, res) => {
   fetch('https://inventorydb.herokuapp.com/inventory')
