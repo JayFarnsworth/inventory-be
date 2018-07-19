@@ -4,7 +4,8 @@ const fetch = require('node-fetch');
 const request = require('request');
 
 
-routes.get('/hello', (req, res) => {
+
+routes.get('/', (req, res) => {
   console.log('hi')
   res.send('hello')
 });
