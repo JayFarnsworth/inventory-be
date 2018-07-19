@@ -63,6 +63,10 @@ routes.put('/user', (req, res) => {
   });
 })
 
+routes.delete('/user', (req, res) => {
+  
+})
+
 
 routes.get('/inventory', (req, res) => {
   fetch('https://inventorydb.herokuapp.com/inventory')
