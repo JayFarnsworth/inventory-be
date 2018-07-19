@@ -64,7 +64,20 @@ routes.put('/user', (req, res) => {
 })
 
 routes.delete('/user', (req, res) => {
-
+  var userId = req.query.id;
+  var clientServerOptions = {
+    uri: `https://inventorydb.herokuapp.com/user?id=${userId}`,
+    body: JSON.stringify(req.body),
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  request(clientServerOptions, function (error, response) {
+    console.log(response.body);
+    res.send(response.body)
+    return;
+  });
 })
 
 
