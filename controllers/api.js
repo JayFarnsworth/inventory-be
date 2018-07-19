@@ -50,7 +50,7 @@ routes.put('/user', (req, res) => {
   }
   var clientServerOptions = {
     uri: 'https://inventorydb.herokuapp.com/user',
-    body: JSON.stringify(idObject),
+    body: JSON.stringify(req.body),
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ routes.put('/user', (req, res) => {
 })
 
 routes.delete('/user', (req, res) => {
-  
+
 })
 
 
