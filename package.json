@@ -15,12 +15,14 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
+    "knex": "^0.15.1",
     "monk": "^6.0.6",
     "morgan": "~1.9.0",
     "multer": "^1.3.1",
     "multer-s3": "^2.7.0",
     "node-fetch": "^2.1.2",
     "nodemon": "^1.18.2",
+    "pg": "^7.4.3",
     "request": "^2.87.0"
   },
   "devDependencies": {

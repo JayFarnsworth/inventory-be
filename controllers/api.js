@@ -16,6 +16,53 @@ routes.get('/users', (req, res) => {
     .catch(error=>console.log(error))
 })
 
+routes.get('/user', (req, res) => {
+  var id = req.query.id;
+  fetch(`https://inventorydb.herokuapp.com/user`)
+    .then(resp => resp.json())
+    .then(resp => { res.status(200).send(resp) })
+    .catch(error => console.log(error))
+})
+
+routes.post('/user', (req, res) => {
+  var clientServerOptions = {
+    uri: 'https://inventorydb.herokuapp.com/user',
+    body: JSON.stringify(req.body),
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  request(clientServerOptions, function (error, response) {
+    console.log(response.body);
+    res.send(response.body)
+    return;
+  });
+})
+
+routes.put('/user', (req, res) => {
+  var userId = req.query.userId;
+  var schoolId = req.query.schoolId;
+  var idObject = {
+    user: userId,
+    school: schoolId
+  }
+  var clientServerOptions = {
+    uri: 'https://inventorydb.herokuapp.com/user',
+    body: JSON.stringify(idObject),
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  request(clientServerOptions, function (error, response) {
+    console.log(response.body);
+    res.send(response.body)
+    return;
+  });
+})
+
+
 routes.get('/inventory', (req, res) => {
   fetch('https://inventorydb.herokuapp.com/inventory')
     .then(resp=>resp.json())
@@ -41,7 +88,7 @@ routes.post('/inventory', (req, res) => {
 
 // routes.get('/facilities')
 
-routes.post('/users/post', (req, res) => {
+routes.post('/user', (req, res) => {
   var clientServerOptions = {
     uri: 'https://inventorydb.herokuapp.com/users/post',
     body: JSON.stringify(req.body),
